@@ -1,6 +1,6 @@
 var i;
 
-// start menu
+// start menu catalog
 const homecategorylist = document.querySelector('.home_category__list');
 if(homecategorylist) {
   const headernl = document.getElementsByClassName("home_category__link");
@@ -65,4 +65,21 @@ if(homecategorylist) {
     };
   }
 }
-// end menu
+// end menu catalog
+
+// start slider catalog
+document.querySelectorAll(".home_category__flex").forEach((n) => {
+  const slider = new Swiper(n.querySelector(".home_category__slider"), {
+    loop: false,
+    slidesPerView: 'auto',
+    touchRatio: 0.2,
+    spaceBetween: 20,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
+    navigation: {
+      nextEl: n.querySelector(".home_category__next"),
+      prevEl: n.querySelector(".home_category__prev"),
+    },
+  });
+});
+// end slider catalog
