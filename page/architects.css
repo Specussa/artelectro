@@ -1,0 +1,83 @@
+.architects .values:nth-child(1) {
+    background: none;
+    padding-bottom: 105px;
+}
+.architects .values_item {
+    min-height: 240px;
+    height: auto;
+}
+.architects .values_item .values_name {
+    margin: 31px 0px 10px 0px;
+}
+.architects .values_item .values_text {
+    max-width: initial;
+}
+.architects .values .title_block {
+    padding: 85px 0px 65px 0px;
+}
+.architects .servis {
+    background-image: url(../img/solutions_stages.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+.architects .servis .values_img {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    height: auto;
+}
+.architects .servis .values_item {
+    min-height: 200px;
+    padding: 0px 30px;
+}
+.architects .servis .values_name {
+    max-width: 200px;
+}
+.architects .products {
+    padding-bottom: 85px;
+}
+.architects .products_item {
+    position: relative;
+    border-radius: 10px;
+    background: #f0f0f8;
+    padding:40px 30px 30px 30px;
+    margin-bottom: 20px;
+}
+.architects .products_item p {
+    margin-top: 30px;
+}
+.architects .products_item .abs {
+    position: absolute;
+    top: 20px;
+    left: 7%;
+}
+.products_item.bl5 .abs {
+    top: 0px;
+}
+.architects .products_item .img {
+    height: 54px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+.architects .products_item.bl3 .abs {
+    top: -46px;
+}
+.architects .products_slider .swiper_nav_block {
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .architects .values:nth-child(1) {
+        padding-bottom: 60px;
+    }
+
+    .architects .values .title_block {
+        padding: 50px 0px 40px 0px;
+    }
+
+    .architects .servis {
+        padding-bottom: 60px;
+    }
+}
