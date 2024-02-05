@@ -72,7 +72,7 @@ document.querySelectorAll(".home_category__flex").forEach((n) => {
   const slider = new Swiper(n.querySelector(".home_category__slider"), {
     loop: false,
     slidesPerView: 'auto',
-    touchRatio: 0.2,
+    speed: 500,
     spaceBetween: 20,
     slideToClickedSlide: true,
     allowTouchMove: true,
