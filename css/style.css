@@ -316,6 +316,7 @@
 
 .catalog_subsection__top {
   display:flex;
+  padding: 40px 0;
   flex-direction:column;
   gap:20px;
   position:relative;
@@ -413,7 +414,7 @@
   font-weight:400;
   line-height:32px;
   letter-spacing:0.05em;
-  color:var(--text);
+  color:#0d0d0e;
 }
 
 .catalog_subsection__bottom {
@@ -446,6 +447,113 @@
   background: transparent;
   cursor: pointer;
 }
+
+.catalog_subsection__top {
+  width: 100%;
+}
+
+/* start select */
+
+.form__select_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(33.333% - 14px);
+  flex-wrap: wrap;
+}
+
+.form__select {
+  position: relative;
+  width: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.form__select_selected_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  color: #0d0d0e;
+  background: #fff;
+  border: 1px solid #0d0d0e66;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form__select_arrow {
+  width: 12px;
+  height: 12px;
+  color: #0d0d0e66;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+.form__select_arrow_rotate {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.form__select_list {
+  width: 100%;
+  max-height: 0;
+  -webkit-transition: max-height 0.3s linear, visibility 0.3s ease-out, opacity 0.3s linear;
+  transition: max-height 0.3s linear, visibility 0.3s ease-out, opacity 0.3s linear;
+  position: absolute;
+  top: 41px;
+  z-index: 10;
+  overflow: auto;
+  border: 1px solid #63A48D;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition-delay: 0s, 0.3s;
+  transition-delay: 0s, 0.3s;
+}
+
+.form__select_list_opened {
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  z-index: 11;
+}
+
+.form__select_list::-webkit-scrollbar {
+  display: none;
+}
+
+.form__select_list::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.form__select_input {
+  display: none;
+}
+
+.form__select_list_item {
+  padding: 10px 20px;
+  color: #0d0d0e;
+  border-bottom: 1px solid #63A48D;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.form__select_list_item:hover {
+  color: #fff;
+  background-color: #63a48d;
+}
+
+.form__select_label {
+  color: #0d0d0e;
+}
+
+/* end select */
 
 @media screen and (max-width: 992px){ 
   .home_category__wrapper {
