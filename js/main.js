@@ -68,20 +68,22 @@ if(homecategorylist) {
 // end menu catalog
 
 // start slider catalog
-document.querySelectorAll(".home_category__flex").forEach((n) => {
-  const slider = new Swiper(n.querySelector(".home_category__slider"), {
-    loop: false,
-    slidesPerView: 'auto',
-    speed: 500,
-    spaceBetween: 20,
-    slideToClickedSlide: true,
-    allowTouchMove: true,
-    navigation: {
-      nextEl: n.querySelector(".home_category__next"),
-      prevEl: n.querySelector(".home_category__prev"),
-    },
+if (document.querySelector(".home_category__flex")) {
+  document.querySelectorAll(".home_category__flex").forEach((n) => {
+    const slider = new Swiper(n.querySelector(".home_category__slider"), {
+      loop: false,
+      slidesPerView: 'auto',
+      speed: 500,
+      spaceBetween: 20,
+      slideToClickedSlide: true,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: n.querySelector(".home_category__next"),
+        prevEl: n.querySelector(".home_category__prev"),
+      },
+    });
   });
-});
+}
 // end slider catalog
 
 // start hover catalog_subsection
@@ -89,9 +91,9 @@ var hover = document.querySelectorAll(".catalog_subsection__images");
 elemHover = false;
 hover.forEach((hovers) => {
   hovers.addEventListener("mouseover", function (e) {
-    if (elemHover) return;
+    if (elemHover) {return};
     var target = e.target.closest(".catalog_subsection__image");
-    if (!target) return;
+    if (!target) {return};
     elemHover = target;
     var parent = target.closest(".catalog_subsection__images");
     var parentb = target.closest(".catalog_subsection__item_link");
@@ -99,8 +101,8 @@ hover.forEach((hovers) => {
     var oldb = parentb.querySelector(".catalog_subsection__image_block .active");
     if (old) {
       old.classList.remove("active");
-      oldb.classList.remove("active");
-    }
+      oldb.classList.remove("active")
+    };
     target.classList.add("active");
     var indexb = target ? [...target.parentNode.children].indexOf(target) : -1;
     target.parentNode.parentNode.children[1].children[indexb].classList.add("active");
@@ -114,16 +116,28 @@ hover.forEach((hovers) => {
     let elems = parent.children;
     let els = parent.parentNode.children[1].children;
 
-    for (let elem of elems) {
-      elem.classList.remove("active");
-    }
-    for (let el of els) {
-      el.classList.remove("active");
-    }
+    for (let elem of elems) {elem.classList.remove("active")};
+    for (let el of els) {el.classList.remove("active")};
     this.parentNode.children[1].children[0].classList.add("active");
     this.children[0].classList.add("active");
   });
 });
+// end hover catalog_subsection
+
+// start select
+const cstb = document.querySelector('.catalog_subsection__top_button');
+const csl = document.querySelector('.catalog_subsection__list');
+if (cstb) {
+  cstb.addEventListener('click', function() {
+    if (cstb.classList.contains("active")) {
+      cstb.classList.remove("active");
+      csl.classList.remove("active");
+    } else {
+      cstb.classList.add("active");
+      csl.classList.add("active");
+    }
+  })
+}
 // end hover catalog_subsection
 
 // start select
