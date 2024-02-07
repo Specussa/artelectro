@@ -537,7 +537,7 @@
   color: transparent;
 }
 
-.catalog_subsection__favorite:hover svg path,
+.catalog_subsection__favorite:hover svg path:nth-child(1),
 .catalog_subsection__favorite.active svg path,
 .catalog_subsection__comparison:hover svg path,
 .catalog_subsection__comparison.active svg path {
@@ -579,11 +579,11 @@
 }
 
 .catalog_subsection__top_button span:nth-child(2) {
-  color: #000;
+  color: #0d0d0e;
 }
 
 .catalog_subsection__top_button.active span {
-  color: #000;
+  color: #0d0d0e;
 }
 
 .catalog_subsection__top_button.active span:nth-child(2) {
