@@ -141,6 +141,46 @@ if (cstb) {
 // end hover catalog_subsection
 
 // start select
+const btnincarts = document.querySelector('.btn__incart');
+if(btnincarts) {
+  const btnincart = document.getElementsByClassName("btn__incart");
+  for (i = 0; i < btnincart.length; i++) {
+    btnincart[i].onclick = function(e) {
+      if (this.classList.contains("active")) {
+        this.classList.remove("active");
+        this.children[0].innerText = "В корзину";
+      } else {
+        this.classList.add("active");
+        this.children[0].innerText = "В корзине";
+      }
+    };
+  }
+  const btninfavorite = document.getElementsByClassName("catalog_subsection__favorite");
+  for (i = 0; i < btninfavorite.length; i++) {
+    btninfavorite[i].onclick = function(e) {
+      if (this.classList.contains("active")) {
+        this.classList.remove("active");
+      } else {
+        this.classList.add("active");
+      }
+    };
+  }
+  const btnincomparison = document.getElementsByClassName("catalog_subsection__comparison");
+  for (i = 0; i < btnincomparison.length; i++) {
+    btnincomparison[i].onclick = function(e) {
+      if (this.classList.contains("active")) {
+        this.classList.remove("active");
+        this.children[0].innerText = "В корзину";
+      } else {
+        this.classList.add("active");
+        this.children[0].innerText = "В корзине";
+      }
+    };
+  }
+}
+// end hover catalog_subsection
+
+// start select
 const SELECT = '[data-select]'
 const SELECT_LIST = '[data-select-list]'
 const SELECT_ARROW = '[data-select-arrow]'
