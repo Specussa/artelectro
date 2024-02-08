@@ -814,6 +814,7 @@
   text-transform: uppercase;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .catalog_subsection__filter_list {
@@ -855,6 +856,7 @@
   font-weight: 900;
   line-height: 23px;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .catalog_subsection__filter_clear {
@@ -993,7 +995,7 @@
 }
 
 .noUi-horizontal {
-  height: 16px;
+  height: 17px;
   padding: 0 8px;
 }
 
@@ -1038,6 +1040,24 @@
 
 .catalog_subsection__filter_range_input {
   width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+  color: #858585;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f8;
+  outline: none;
+}
+
+.catalog_subsection__filter_range_input::-webkit-outer-spin-button,
+.catalog_subsection__filter_range_input::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* end select */
