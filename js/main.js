@@ -298,6 +298,27 @@ if(csff) {
       }
     };
   }
+  const csfp = document.querySelector('.catalog_subsection__filter_popup');
+  const csfpb = document.querySelector('.catalog_subsection__filter_popup_button');
+  csfpb.addEventListener('click', function() {
+    if (csfp.classList.contains("active")) {
+      csfp.classList.remove("active");
+      document.documentElement.classList.remove("noscroll");
+    } else {
+      csfp.classList.add("active");
+      document.documentElement.classList.add("noscroll");
+    }
+  })
+  const csfc = document.querySelector('.catalog_subsection__filter_close');
+  csfc.addEventListener('click', function() {
+    if (csfp.classList.contains("active")) {
+      csfp.classList.remove("active");
+      document.documentElement.classList.remove("noscroll");
+    } else {
+      csfp.classList.add("active");
+      document.documentElement.classList.add("noscroll");
+    }
+  })
 }
 // end menu catalog
 
