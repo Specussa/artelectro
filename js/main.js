@@ -86,6 +86,24 @@ if (document.querySelector(".home_category__swiper")) {
 }
 // end slider catalog
 
+// start slider product
+if (document.querySelector(".catalog_product_slider__swiper")) {
+  const slider = new Swiper(document.querySelector(".catalog_product_slider__swiper"), {
+    loop: false,
+    slidesPerView: 'auto',
+    speed: 500,
+    spaceBetween: 20,
+    allowTouchMove: true,
+    slideToClickedSlide: false,
+    breakpoints: {
+      992: {
+        slidesPerView: 4,
+      },
+    },
+  });
+}
+// end slider product
+
 // start hover catalog_subsection
 var hover = document.querySelectorAll(".catalog_subsection__images");
 elemHover = false;
