@@ -68,8 +68,8 @@ if(homecategorylist) {
 // end menu catalog
 
 // start slider catalog
-if (document.querySelector(".home_category__flex")) {
-  document.querySelectorAll(".home_category__flex").forEach((n) => {
+if (document.querySelector(".home_category__swiper")) {
+  document.querySelectorAll(".home_category__swiper").forEach((n) => {
     const slider = new Swiper(n.querySelector(".home_category__slider"), {
       loop: false,
       slidesPerView: 'auto',
@@ -276,3 +276,73 @@ class Select {
 
 Select.attach()
 // end select
+
+// start menu catalog
+const csff = document.querySelector('.catalog_subsection__filter_form');
+if(csff) {
+  const csfb = document.getElementsByClassName("catalog_subsection__filter_button");
+  for (i = 0; i < csfb.length; i++) {
+    csfb[i].onclick = function(e) {
+      const csfbNext = this.nextElementSibling;
+      const csfs = document.getElementsByClassName("catalog_subsection__filter_sublist");
+      const csfbActive = document.getElementsByClassName("catalog_subsection__filter_button active");
+
+      if (csfbNext && csfbNext.classList.contains("active")) {
+        this.classList.remove("active");
+        csfbNext.classList.remove("active");
+        csfbNext.style.maxHeight = null;
+      } else if (csfbNext) {
+        csfbNext.style.maxHeight = csfbNext.scrollHeight + "px";
+        csfbNext.classList.add("active");
+        this.classList.add("active");
+      }
+    };
+  }
+}
+// end menu catalog
+
+// start range slider
+const rangeslider = document.getElementById("filterPrice");
+const rangesfilterInputs = document.querySelectorAll(".catalog_subsection__filter_range_input");
+// const frclear = document.querySelector(".filter__range_clear");
+
+if (rangeslider){
+  const rangeMin = parseInt(rangeslider.dataset.min);
+  const rangeMax = parseInt(rangeslider.dataset.max);
+  const rangestep = parseInt(rangeslider.dataset.step);
+  noUiSlider.create(rangeslider, {
+      start: [rangeMin, rangeMax],
+      connect: true,
+      step: rangestep,
+      range: {
+          'min': Math.round(rangeMin),
+          'max': Math.round(rangeMax)
+      },
+      format: {
+        to: value => Math.round(value),
+        from: value => Math.round(value),
+      }
+  });
+
+  rangeslider.noUiSlider.on('update', (values, handle) => { 
+    rangesfilterInputs[handle].value = values[handle]; 
+  });
+  
+  rangesfilterInputs.forEach((input, indexInput) => { 
+    input.addEventListener('change', () => {
+      rangeslider.noUiSlider.setHandle(indexInput, input.value);
+    })
+  });
+  
+  const pricemin = document.getElementById('price_min');
+  const pricemax = document.getElementById('price_max');
+  const priceminl = pricemin.getAttribute('maxl').length;
+  const pricemaxl = pricemax.getAttribute('maxl').length;
+  pricemin.oninput = function(){this.value = this.value.substr(0, priceminl);}
+  pricemax.oninput = function(){this.value = this.value.substr(0, pricemaxl);}
+
+  // frclear.addEventListener("click", function () {
+  //   rangeslider.noUiSlider.reset();
+  // });
+}
+// end range slider
