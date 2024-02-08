@@ -322,7 +322,8 @@ if(csff) {
 // start range slider
 const rangeslider = document.getElementById("filterPrice");
 const rangesfilterInputs = document.querySelectorAll(".catalog_subsection__filter_range_input");
-// const frclear = document.querySelector(".filter__range_clear");
+const frclear = document.querySelector(".catalog_subsection__filter_clear");
+const csffInputs = [...document.querySelectorAll('.catalog_subsection__filter_form .catalog_subsection__filter_input')];
 
 if (rangeslider){
   const rangeMin = parseInt(rangeslider.dataset.min);
@@ -359,8 +360,9 @@ if (rangeslider){
   pricemin.oninput = function(){this.value = this.value.substr(0, priceminl);}
   pricemax.oninput = function(){this.value = this.value.substr(0, pricemaxl);}
 
-  // frclear.addEventListener("click", function () {
-  //   rangeslider.noUiSlider.reset();
-  // });
+  frclear.addEventListener("click", function () {
+    rangeslider.noUiSlider.reset();
+    for(var i = 0;i < csffInputs.length; i++) {csffInputs[i].checked = false;};
+  });
 }
 // end range slider
