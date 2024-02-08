@@ -284,9 +284,6 @@ if(csff) {
   for (i = 0; i < csfb.length; i++) {
     csfb[i].onclick = function(e) {
       const csfbNext = this.nextElementSibling;
-      const csfs = document.getElementsByClassName("catalog_subsection__filter_sublist");
-      const csfbActive = document.getElementsByClassName("catalog_subsection__filter_button active");
-
       if (csfbNext && csfbNext.classList.contains("active")) {
         this.classList.remove("active");
         csfbNext.classList.remove("active");

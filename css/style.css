@@ -735,6 +735,11 @@
   letter-spacing: 0.03em;
 }
 
+.form__select_selected-title {
+  padding: 0 10px 0 0;
+  flex: 0 0 auto;
+}
+
 .form__select_arrow {
   width: 12px;
   height: 12px;
@@ -1237,9 +1242,18 @@
     position: absolute;
     left: 0;
     bottom: 0;
+    z-index: 1;
+    border-top: 1px solid #f0f0f8;
+    background-color: #fff;
   }
   .home_category .catalog_subsection__filter_send {
     width: 100%;
+  }
+  .form__select_box {
+    width: auto;
+  }
+  .catalog_subsection__top_flex {
+    gap: 5px;
   }
 }
 
