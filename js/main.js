@@ -92,12 +92,16 @@ if (document.querySelector(".catalog_product_slider__swiper")) {
     loop: false,
     slidesPerView: 'auto',
     speed: 500,
-    spaceBetween: 20,
+    spaceBetween: 10,
     allowTouchMove: true,
     slideToClickedSlide: false,
+    touchRatio: 0.2,
     breakpoints: {
       992: {
         slidesPerView: 4,
+      },
+      581: {
+        spaceBetween: 20,
       },
     },
   });
