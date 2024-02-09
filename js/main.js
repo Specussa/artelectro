@@ -108,6 +108,40 @@ if (document.querySelector(".catalog_product_slider__swiper")) {
 }
 // end slider product
 
+// start other__slider
+const productsliders = document.querySelector(".catalog_product__slider");
+if(productsliders){
+  var productthumbs = new Swiper(".catalog_product__thumbs", {
+    loop: true,
+    slidesPerView: 4,
+    spaceBetween: 10,
+    direction: 'vertical',
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 16,
+      },
+      1: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
+  });
+  var productslider = new Swiper(".catalog_product__slider", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: productthumbs,
+    },
+  });
+}
+// end other__slider
+
 // start hover catalog_subsection
 var hover = document.querySelectorAll(".catalog_subsection__images");
 elemHover = false;
