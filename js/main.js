@@ -442,3 +442,46 @@ if (rangeslider){
   });
 }
 // end range slider
+
+// start product
+const productChar = document.querySelector('.catalog_product__info_description_button');
+const productCharBlock = document.querySelector('.catalog_product__info_description');
+const productDesc = document.querySelector('.catalog_product__info_characteristics_button');
+const productDescBlock = document.querySelector('.catalog_product__info_characteristics');
+const productDoc = document.querySelector('.catalog_product__info_documentation_button');
+const productDocBlock = document.querySelector('.catalog_product__info_documentation');
+if (productChar && productCharBlock && productDesc && productDescBlock && productDoc && productDocBlock) {
+  productChar.addEventListener('click', function() {
+    if (!productChar.classList.contains("active")) {
+      productChar.classList.add("active");
+      productCharBlock.classList.add("active");
+      productDesc.classList.remove("active");
+      productDescBlock.classList.remove("active");
+      productDoc.classList.remove("active");
+      productDocBlock.classList.remove("active");
+    }
+  })
+  
+  productDesc.addEventListener('click', function() {
+    if (!productDesc.classList.contains("active")) {
+      productDesc.classList.add("active");
+      productDescBlock.classList.add("active");
+      productChar.classList.remove("active");
+      productCharBlock.classList.remove("active");
+      productDoc.classList.remove("active");
+      productDocBlock.classList.remove("active");
+    }
+  })
+  
+  productDoc.addEventListener('click', function() {
+    if (!productDoc.classList.contains("active")) {
+      productDoc.classList.add("active");
+      productDocBlock.classList.add("active");
+      productChar.classList.remove("active");
+      productCharBlock.classList.remove("active");
+      productDesc.classList.remove("active");
+      productDescBlock.classList.remove("active");
+    }
+  })
+}
+// end product
