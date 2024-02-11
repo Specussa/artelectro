@@ -523,15 +523,37 @@ if (productChar && productCharBlock && productDesc && productDescBlock && produc
     };
   }
 
-  const cpb = document.getElementsByClassName("catalog_product__button");
-  for (i = 0; i < cpb.length; i++) {
-    cpb[i].onclick = function(e) {
-      if (this.classList.contains("active")) {
-        this.classList.remove("active");
-      } else {
-        this.classList.add("active");
-      }
-    };
-  }
+  const productincart = document.querySelector('.catalog_product__incart');
+  productincart.addEventListener('click', function() {
+    if (productincart.classList.contains("active")) {
+      this.children[0].innerText = "В корзину";
+      this.classList.remove("active");
+    } else {
+      this.children[0].innerText = "В корзине";
+      this.classList.add("active");
+    }
+  })
+
+  const productincomparison = document.querySelector('.catalog_product__button_comparison');
+  productincomparison.addEventListener('click', function() {
+    if (productincomparison.classList.contains("active")) {
+      this.children[1].innerText = "Сравнить";
+      this.classList.remove("active");
+    } else {
+      this.children[1].innerText = "В cравнении";
+      this.classList.add("active");
+    }
+  })
+
+  const productinfavorite = document.querySelector('.catalog_product__button_favorite');
+  productinfavorite.addEventListener('click', function() {
+    if (productinfavorite.classList.contains("active")) {
+      this.children[1].innerText = "В избранное";
+      this.classList.remove("active");
+    } else {
+      this.children[1].innerText = "В избранном";
+      this.classList.add("active");
+    }
+  })
 }
 // end product
