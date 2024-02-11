@@ -478,15 +478,13 @@ if (productChar && productCharBlock && productDesc && productDescBlock && produc
   })
 
   productChars.addEventListener('click', function() {
-    if (!productChar.classList.contains("active")) {
-      productChar.classList.add("active");
-      productCharBlock.classList.add("active");
-      productDesc.classList.remove("active");
-      productDescBlock.classList.remove("active");
-      productDoc.classList.remove("active");
-      productDocBlock.classList.remove("active");
-      productChar.scrollIntoView();
-    }
+    productChar.classList.add("active");
+    productCharBlock.classList.add("active");
+    productDesc.classList.remove("active");
+    productDescBlock.classList.remove("active");
+    productDoc.classList.remove("active");
+    productDocBlock.classList.remove("active");
+    productChar.scrollIntoView();
   })
   
   productDesc.addEventListener('click', function() {
