@@ -128,6 +128,10 @@ if(productsliders){
       maxRatio: 3,
       minRatio: 1
     },
+    pagination: {
+      el: '.catalog_product__pagination',
+      clickable: true,
+    },
     navigation: {
       nextEl: ".catalog_product__slider_next",
       prevEl: ".catalog_product__slider_prev",
@@ -532,25 +536,61 @@ if (productChar && productCharBlock && productDesc && productDescBlock && produc
     }
   })
 
-  const productincomparison = document.querySelector('.catalog_product__button_comparison');
-  productincomparison.addEventListener('click', function() {
-    if (productincomparison.classList.contains("active")) {
+  const productdesccomp = document.querySelector('.catalog_product__desktop_comparison');
+  const productmobcomp = document.querySelector('.catalog_product__mobile_comparison');
+  productdesccomp.addEventListener('click', function() {
+    if (productdesccomp.classList.contains("active")) {
       this.children[1].innerText = "Сравнить";
+      productmobcomp.children[1].innerText = "Сравнить";
       this.classList.remove("active");
+      productmobcomp.classList.remove("active");
     } else {
       this.children[1].innerText = "В cравнении";
+      productmobcomp.children[1].innerText = "В cравнении";
       this.classList.add("active");
+      productmobcomp.classList.add("active");
+    }
+  })
+  productmobcomp.addEventListener('click', function() {
+    if (productmobcomp.classList.contains("active")) {
+      this.children[1].innerText = "Сравнить";
+      productdesccomp.children[1].innerText = "Сравнить";
+      this.classList.remove("active");
+      productdesccomp.classList.remove("active");
+    } else {
+      this.children[1].innerText = "В cравнении";
+      productdesccomp.children[1].innerText = "В cравнении";
+      this.classList.add("active");
+      productdesccomp.classList.add("active");
     }
   })
 
-  const productinfavorite = document.querySelector('.catalog_product__button_favorite');
-  productinfavorite.addEventListener('click', function() {
-    if (productinfavorite.classList.contains("active")) {
+  const productdescfav = document.querySelector('.catalog_product__desktop_favorite');
+  const productmobfav = document.querySelector('.catalog_product__mobile_favorite');
+  productdescfav.addEventListener('click', function() {
+    if (productdescfav.classList.contains("active")) {
       this.children[1].innerText = "В избранное";
+      productmobfav.children[1].innerText = "В избранное";
       this.classList.remove("active");
+      productmobfav.classList.remove("active");
     } else {
       this.children[1].innerText = "В избранном";
+      productmobfav.children[1].innerText = "В избранном";
       this.classList.add("active");
+      productmobfav.classList.add("active");
+    }
+  })
+  productmobfav.addEventListener('click', function() {
+    if (productmobfav.classList.contains("active")) {
+      this.children[1].innerText = "В избранное";
+      productdescfav.children[1].innerText = "В избранное";
+      this.classList.remove("active");
+      productdescfav.classList.remove("active");
+    } else {
+      this.children[1].innerText = "В избранном";
+      productdescfav.children[1].innerText = "В избранном";
+      this.classList.add("active");
+      productdescfav.classList.add("active");
     }
   })
 
