@@ -553,5 +553,21 @@ if (productChar && productCharBlock && productDesc && productDescBlock && produc
       this.classList.add("active");
     }
   })
+
+  const csfb = document.getElementsByClassName("catalog_product__info_link");
+  for (i = 0; i < csfb.length; i++) {
+    csfb[i].onclick = function(e) {
+      const csfbNext = this.nextElementSibling;
+      if (csfbNext && csfbNext.classList.contains("active")) {
+        this.classList.remove("active");
+        csfbNext.classList.remove("active");
+        csfbNext.style.maxHeight = null;
+      } else if (csfbNext) {
+        csfbNext.style.maxHeight = csfbNext.scrollHeight + "px";
+        csfbNext.classList.add("active");
+        this.classList.add("active");
+      }
+    };
+  }
 }
 // end product
