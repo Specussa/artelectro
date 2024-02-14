@@ -89,7 +89,7 @@ if (document.querySelector(".home_category__swiper")) {
 // start slider catalog
 if (document.querySelector(".catalog_product_slider")) {
   document.querySelectorAll(".catalog_product_slider").forEach((n) => {
-    const slider = new Swiper(n.querySelector(".catalog_product_slider__swiper"), {
+    const cpslider = new Swiper(n.querySelector(".catalog_product_slider__swiper"), {
       loop: false,
       slidesPerView: 'auto',
       speed: 500,
@@ -110,6 +110,37 @@ if (document.querySelector(".catalog_product_slider")) {
         },
       },
     });
+    if (document.querySelector(".comparison__block")) {
+      document.querySelectorAll(".comparison__block").forEach((n) => {
+        const cbswiper = new Swiper(n.querySelector(".comparison__block_swiper"), {
+          loop: false,
+          slidesPerView: 'auto',
+          speed: 500,
+          spaceBetween: 10,
+          allowTouchMove: true,
+          slideToClickedSlide: false,
+          touchRatio: 0.2,
+          navigation: {
+            nextEl: n.querySelector(".comparison__block_next"),
+            prevEl: n.querySelector(".comparison__block_prev"),
+          },
+          breakpoints: {
+            992: {
+              slidesPerView: 4,
+            },
+            581: {
+              spaceBetween: 20,
+            },
+          },
+        });
+        cpslider.on('slideChangeTransitionStart', function() {
+          cbswiper.slideTo(cpslider.activeIndex);
+        });
+        cbswiper.on('transitionStart', function(){
+          cpslider.slideTo(cbswiper.activeIndex);
+        });
+      });
+    }
   });
 }
 // end slider catalog

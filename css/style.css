@@ -664,13 +664,6 @@ html.noscroll {
   cursor: pointer;
 }
 
-.catalog_subsection__favorite:hover,
-.catalog_subsection__favorite.active,
-.catalog_subsection__comparison:hover,
-.catalog_subsection__comparison.active {
-  color: #0d0d0e;
-}
-
 .catalog_subsection__favorite svg,
 .catalog_subsection__comparison svg {
   width: 20px;
@@ -690,9 +683,12 @@ html.noscroll {
 
 .catalog_subsection__favorite:hover svg path:nth-child(1),
 .catalog_subsection__favorite.active svg path,
-.catalog_subsection__comparison:hover svg path,
-.catalog_subsection__comparison.active svg path {
+.catalog_subsection__comparison:hover svg path {
   color: #63a48d;
+}
+
+.catalog_subsection__comparison.active svg path {
+  color: #0d0d0e;
 }
 
 .catalog_subsection__top_flex,
