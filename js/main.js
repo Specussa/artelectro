@@ -617,3 +617,84 @@ if (productChar && productCharBlock && productDesc && productDescBlock && produc
   }
 }
 // end product
+
+// start plus minus
+var productinput = document.querySelector(".product__input input");
+if (productinput) {
+  document.querySelectorAll(".product__count .product__minus").forEach(function (element) {
+    element.addEventListener("click", function (event) {
+      let inputMax = this.parentElement.querySelector(".product__input input").getAttribute("max");
+      event.preventDefault();
+      let input = this.parentElement.querySelector(".product__input input");
+      let count = parseInt(input.value) - 1;
+      count = count < 1 ? 1 : count;
+      if (inputMax == "0") count = 0;
+      input.value = count;
+    });
+  });
+  document.querySelectorAll(".product__count .product__plus").forEach(function (element) {
+    element.addEventListener("click", function (event) {
+      let inputMax = this.parentElement.querySelector(".product__input input").getAttribute("max");
+      event.preventDefault();
+      let input = this.parentElement.querySelector(".product__input input");
+      let count = parseInt(input.value) + 1;
+      count = count > parseInt(inputMax) ? parseInt(inputMax) : count;
+      input.value = parseInt(count);
+    });
+  });
+  document.querySelectorAll(".product__count .product__input input").forEach(function (element) {
+    element.addEventListener("change", function (event) {
+      let inputMax = this.parentElement.querySelector(".product__input input").getAttribute("max");
+      event.preventDefault();
+      if (this.value.match(/[^0-9]/g)) {
+        this.value = this.value.replace(/[^0-9]/g, "");
+      }
+      if (this.value == "") {
+        this.value = 1;
+      }
+      if (this.value > parseInt(inputMax)) {
+        this.value = parseInt(inputMax);
+      }
+    });
+  });
+}
+var productsinput = document.querySelector(".products__input input");
+if (productsinput) {
+  document.querySelectorAll(".products__count .products__minus").forEach(function (element) {
+    element.addEventListener("click", function (event) {
+      let inputMax = this.parentElement.querySelector(".products__input input").getAttribute("max");
+      event.preventDefault();
+      let input = this.parentElement.querySelector(".products__input input");
+      let count = parseInt(input.value) - 1;
+      count = count < 1 ? 1 : count;
+      if (parseInt(inputMax) == 0) count = 0;
+      input.value = count;
+    });
+  });
+  document.querySelectorAll(".products__count .products__plus").forEach(function (element) {
+    element.addEventListener("click", function (event) {
+      let inputMax = this.parentElement.querySelector(".products__input input").getAttribute("max");
+      event.preventDefault();
+      let input = this.parentElement.querySelector(".products__input input");
+      let count = parseInt(input.value) + 1;
+      count = count > parseInt(inputMax) ? parseInt(inputMax) : count;
+      input.value = parseInt(count);
+    });
+  });
+  document.querySelectorAll(".products__count .products__input input").forEach(function (element) {
+    element.addEventListener("change", function (event) {
+      let inputMax = this.parentElement.querySelector(".products__input input").getAttribute("max");
+      event.preventDefault();
+      if (this.value.match(/[^0-9]/g)) {
+        this.value = this.value.replace(/[^0-9]/g, "");
+      }
+      if (this.value == "") {
+        this.value = 1;
+      }
+      if (this.value > parseInt(inputMax)) {
+        this.value = parseInt(inputMax);
+      }
+    });
+  });
+}
+// end plus minus
