@@ -1279,7 +1279,7 @@ html.noscroll {
 
 .catalog_product__flex {
   display: flex;
-  padding: 0 0 60px;
+  padding: 0 0 40px;
   gap: 20px;
   overflow: hidden;
 }
