@@ -2626,6 +2626,9 @@ html.noscroll {
   .catalog_product__desktop {
     display: none;
   }
+  .catalog_product__top {
+    padding: 20px 0 0;
+  }
 }
 
 @media screen and (max-width: 580px){
