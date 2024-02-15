@@ -110,16 +110,16 @@ if (document.querySelector(".catalog_product_slider")) {
         },
       },
     });
-    if (document.querySelector(".comparison__block")) {
-      document.querySelectorAll(".comparison__block").forEach((n) => {
-        const cbswiper = new Swiper(n.querySelector(".comparison__block_swiper"), {
+    if (document.querySelector(".comparison__list")) {
+      document.querySelectorAll(".comparison__list").forEach((n) => {
+        const cbswiper = new Swiper(n.querySelector(".comparison__item"), {
           loop: false,
           slidesPerView: 'auto',
-          speed: 500,
+          speed: 300,
           spaceBetween: 10,
           allowTouchMove: true,
           slideToClickedSlide: false,
-          touchRatio: 0.2,
+          touchRatio: 0.5,
           navigation: {
             nextEl: n.querySelector(".comparison__block_next"),
             prevEl: n.querySelector(".comparison__block_prev"),
@@ -730,6 +730,7 @@ if (productsinput) {
 }
 // end plus minus
 
+// start products__popup
 const pp = document.querySelector(".products__popup");
 if (pp) {
   const newoverlay = document.querySelector(".newoverlay");
@@ -759,3 +760,25 @@ if (pp) {
     pp.classList.remove("active");
   });
 }
+// end products__popup
+
+// start products__popup
+const comparison = document.querySelector(".comparison__block");
+if (comparison) {
+  const cl = document.getElementsByClassName("comparison__link");
+  for (i = 0; i < cl.length; i++) {
+    cl[i].onclick = function(e) {
+      const clNext = this.nextElementSibling;
+      if (clNext && clNext.classList.contains("active")) {
+        this.classList.remove("active");
+        clNext.classList.remove("active");
+        clNext.style.maxHeight = null;
+      } else if (clNext) {
+        clNext.style.maxHeight = clNext.scrollHeight + "px";
+        clNext.classList.add("active");
+        this.classList.add("active");
+      }
+    };
+  }
+}
+// end products__popup
