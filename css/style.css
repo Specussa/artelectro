@@ -2587,6 +2587,21 @@ html.noscroll {
 }
 
 @media screen and (max-width: 850px){
+  .catalog_product__bottom {
+    flex-direction: column-reverse;
+  }
+  .catalog_product__atr {
+    width: 100%;
+  }
+  .catalog_product__cart {
+    padding: 0;
+  }
+  .catalog_product__top {
+    padding: 20px 0 30px;
+  }
+}
+
+@media screen and (max-width: 580px){
   .catalog_product__flex {
     flex-direction: column;
   }
@@ -2604,9 +2619,6 @@ html.noscroll {
   .catalog_product__desktop {
     display: none;
   }
-}
-
-@media screen and (max-width: 580px){
   .catalog_product_slider .btn__incart span,
   .compare_product_slider .btn__incart span {
     display: none;
