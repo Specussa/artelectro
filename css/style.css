@@ -454,12 +454,14 @@ html.noscroll {
   background-color: #858585;
 }
 
-.catalog_product_slider__block {
+.catalog_product_slider__block,
+.compare_product_slider__block {
   padding: 40px 15px 0;
   overflow: hidden;
 }
 
-.catalog_product_slider__swiper.swiper {
+.catalog_product_slider__swiper.swiper,
+.compare_product_slider__swiper.swiper {
   overflow: visible;
 }
 
@@ -631,11 +633,13 @@ html.noscroll {
   flex-wrap: nowrap;
 }
 
-.catalog_product_slider__wrapper {
+.catalog_product_slider__wrapper,
+.compare_product_slider__wrapper {
   padding: 20px 0;
 }
 
-.catalog_product_slider {
+.catalog_product_slider,
+.compare_product_slider {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -1251,7 +1255,8 @@ html.noscroll {
   background: #63a48d;
 }
 
-.catalog_product_slider .btn__incart svg {
+.catalog_product_slider .btn__incart svg,
+.compare_product_slider .btn__incart svg {
   display: none;
 }
 
@@ -1263,7 +1268,8 @@ html.noscroll {
   padding: 0 0 40px;
 }
 
-.catalog_product_slider__container {
+.catalog_product_slider__container,
+.compare_product_slider__container {
   padding: 0;
 }
 
@@ -1466,7 +1472,7 @@ html.noscroll {
   transition: max-height 0.3s linear, opacity 0.3s linear;
   transition-property: transform, max-height, opacity;
   transition-duration: 0.3s !important;
-  /* overflow-y: hidden; */
+  cursor: col-resize;
 }
 
 .catalog_product__info_sublist.active,
@@ -1957,7 +1963,8 @@ html.noscroll {
   letter-spacing: 0.03em;
 }
 
-.catalog_product_slider__head {
+.catalog_product_slider__head,
+.compare_product_slider__head {
   text-transform: uppercase;
 }
 
@@ -2518,7 +2525,8 @@ html.noscroll {
   .catalog_subsection__top_flex {
     gap: 5px;
   }
-  .catalog_product_slider__swiper.swiper {
+  .catalog_product_slider__swiper.swiper,
+  .compare_product_slider__swiper.swiper {
     overflow: visible;
   }
   .home_category .catalog_subsection__filter_send {
@@ -2599,10 +2607,12 @@ html.noscroll {
 }
 
 @media screen and (max-width: 580px){
-  .catalog_product_slider .btn__incart span {
+  .catalog_product_slider .btn__incart span,
+  .compare_product_slider .btn__incart span {
     display: none;
   }
-  .catalog_product_slider .btn__incart svg {
+  .catalog_product_slider .btn__incart svg,
+  .compare_product_slider .btn__incart svg {
     display: flex;
     margin: 0;
   }

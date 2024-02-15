@@ -110,6 +110,34 @@ if (document.querySelector(".catalog_product_slider")) {
         },
       },
     });
+  });
+}
+// end slider catalog
+
+// start slider compare
+if (document.querySelector(".compare_product_slider")) {
+  document.querySelectorAll(".compare_product_slider").forEach((n) => {
+    const cpslider = new Swiper(n.querySelector(".compare_product_slider__swiper"), {
+      loop: false,
+      slidesPerView: 'auto',
+      speed: 500,
+      spaceBetween: 10,
+      allowTouchMove: true,
+      slideToClickedSlide: false,
+      touchRatio: 0.2,
+      navigation: {
+        nextEl: n.querySelector(".compare_product_slider__next"),
+        prevEl: n.querySelector(".compare_product_slider__prev"),
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 4,
+        },
+        581: {
+          spaceBetween: 20,
+        },
+      },
+    });
     if (document.querySelector(".comparison__list")) {
       document.querySelectorAll(".comparison__list").forEach((n) => {
         const cbswiper = new Swiper(n.querySelector(".comparison__item"), {
@@ -143,7 +171,7 @@ if (document.querySelector(".catalog_product_slider")) {
     }
   });
 }
-// end slider catalog
+// end slider compare
 
 // start other__slider
 const productsliders = document.querySelector(".catalog_product__slider");
