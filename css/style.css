@@ -317,6 +317,7 @@ html.noscroll {
 }
 
 .catalog_subsection__flex_clear {
+  flex: 0 0 auto;
   color: #858585;
 }
 
@@ -1052,6 +1053,13 @@ html.noscroll {
 .catalog_subsection__filter_text {
   font-size: 14px;
   font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+}
+
+.catalog_subsection__filter_text b {
+  font-size: 14px;
+  font-weight: 700;
   line-height: 19px;
   letter-spacing: 0.03em;
 }
@@ -2218,6 +2226,63 @@ html.noscroll {
   color: #63a48d;
   border: 1px solid transparent;
   background-color: #fff;
+}
+
+.comparison__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.comparison__button {
+  display: block;
+  width: max-content;
+  padding: 10px 30px;
+  position: relative;
+  border: 1px solid #63a48d;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.comparison__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #0d0d0e;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+.comparison__input {
+  display: none;
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.comparison__back {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  -webkit-transition: background-color 0.15s linear;
+  transition: background-color 0.15s linear;
+}
+
+.comparison__button:hover .comparison__text,
+.comparison__input:checked ~ .comparison__text {
+  color: #fff;
+}
+
+.comparison__button:hover .comparison__back,
+.comparison__input:checked ~ .comparison__back {
+  background-color: #63a48d;
 }
 
 .b24-widget-button-inner-container{position:relative;display:inline-block;}
