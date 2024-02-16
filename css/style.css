@@ -236,13 +236,10 @@ html.noscroll {
 }
 
 .home_category__buttons .swiper-button-next.swiper-button-disabled,
-.home_category__buttons .swiper-button-prev.swiper-button-disabled {
-  opacity: 0;
-}
-
+.home_category__buttons .swiper-button-prev.swiper-button-disabled,
 .catalog_subsection__navigation .swiper-button-next.swiper-button-disabled,
 .catalog_subsection__navigation .swiper-button-prev.swiper-button-disabled {
-  opacity: 0.5;
+  opacity: 0;
 }
 
 .home_category__buttons .swiper-button-next svg,
