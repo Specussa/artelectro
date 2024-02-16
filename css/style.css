@@ -2888,7 +2888,13 @@ html.noscroll {
   }
   .comparison__buttons {
     flex-wrap: nowrap;
-    overflow-y: scroll;
+    overflow-x: scroll;
+  }
+  .comparison__buttons::-webkit-scrollbar {
+    display: none;
+  }
+  .comparison__buttons::-webkit-scrollbar-thumb {
+    display: none;
   }
   .comparison__button {
     flex: 0 0 auto;
