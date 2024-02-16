@@ -869,11 +869,8 @@ if (comparison) {
   for (i = 0; i < clone.length; i++) {
     clone[i].onclick = function(e) {
       const newcltwo = cltwoblock.children[this.parentNode.parentNode.getAttribute('inc-step') - 1].children[0].children[0];
-      console.log(newcltwo)
       const cloneNext = this.nextElementSibling;
       if (cloneNext && cloneNext.classList.contains("active")) {
-        console.log(newcltwo)
-        console.log(newcltwo.nextElementSibling)
         newcltwo.nextElementSibling.style.maxHeight = null;
         newcltwo.nextElementSibling.classList.remove("active");
         newcltwo.classList.remove("active");
@@ -895,8 +892,6 @@ if (comparison) {
       const newclone = cloneblock.children[this.parentNode.parentNode.getAttribute('inc-step') - 1].children[0].children[0];
       const cltwoNext = this.nextElementSibling;
       if (cltwoNext && cltwoNext.classList.contains("active")) {
-        console.log(newclone)
-        console.log(newclone.nextElementSibling)
         newclone.nextElementSibling.style.maxHeight = null;
         newclone.nextElementSibling.classList.remove("active");
         newclone.classList.remove("active");
