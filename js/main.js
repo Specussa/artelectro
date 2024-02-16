@@ -868,43 +868,48 @@ if (comparison) {
   const cltwoblock = document.querySelector(".compare_product_slider__two .comparison__block");
   for (i = 0; i < clone.length; i++) {
     clone[i].onclick = function(e) {
-      const newcltwo = cltwoblock.children[this.parentNode.parentNode.getAttribute('inc-step') - 1].children[0].children[1];
+      const newcltwo = cltwoblock.children[this.parentNode.parentNode.getAttribute('inc-step') - 1].children[0].children[0];
+      console.log(newcltwo)
       const cloneNext = this.nextElementSibling;
       if (cloneNext && cloneNext.classList.contains("active")) {
+        console.log(newcltwo)
+        console.log(newcltwo.nextElementSibling)
+        newcltwo.nextElementSibling.style.maxHeight = null;
+        newcltwo.nextElementSibling.classList.remove("active");
+        newcltwo.classList.remove("active");
         this.classList.remove("active");
         cloneNext.classList.remove("active");
         cloneNext.style.maxHeight = null;
-        newcltwo.nextElementSibling.style.maxHeight = null;
-        newcltwo.nextElementSibling.classList.remove("active");;
-        newcltwo.classList.remove("active");
       } else if (cloneNext) {
+        newcltwo.nextElementSibling.style.maxHeight = newcltwo.nextElementSibling.scrollHeight + "px";
+        newcltwo.nextElementSibling.classList.add("active");
+        newcltwo.classList.add("active");
         cloneNext.style.maxHeight = cloneNext.scrollHeight + "px";
         cloneNext.classList.add("active");
         this.classList.add("active");
-        newcltwo.nextElementSibling.style.maxHeight = cloneNext.scrollHeight + "px";
-        newcltwo.nextElementSibling.classList.add("active");;
-        newcltwo.classList.add("active");
       }
     };
   }
   for (i = 0; i < cltwo.length; i++) {
     cltwo[i].onclick = function(e) {
-      const newclone = cloneblock.children[this.parentNode.parentNode.getAttribute('inc-step') - 1].children[0].children[1];
+      const newclone = cloneblock.children[this.parentNode.parentNode.getAttribute('inc-step') - 1].children[0].children[0];
       const cltwoNext = this.nextElementSibling;
       if (cltwoNext && cltwoNext.classList.contains("active")) {
+        console.log(newclone)
+        console.log(newclone.nextElementSibling)
+        newclone.nextElementSibling.style.maxHeight = null;
+        newclone.nextElementSibling.classList.remove("active");
+        newclone.classList.remove("active");
         this.classList.remove("active");
         cltwoNext.classList.remove("active");
         cltwoNext.style.maxHeight = null;
-        newclone.nextElementSibling.style.maxHeight = null;
-        newclone.nextElementSibling.classList.remove("active");;
-        newclone.classList.remove("active");
       } else if (cltwoNext) {
+        newclone.nextElementSibling.style.maxHeight = newclone.nextElementSibling.scrollHeight + "px";
+        newclone.nextElementSibling.classList.add("active");
+        newclone.classList.add("active");
         cltwoNext.style.maxHeight = cltwoNext.scrollHeight + "px";
         cltwoNext.classList.add("active");
         this.classList.add("active");
-        newclone.nextElementSibling.style.maxHeight = cltwoNext.scrollHeight + "px";
-        newclone.nextElementSibling.classList.add("active");;
-        newclone.classList.add("active");
       }
     };
   }
