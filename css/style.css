@@ -2606,13 +2606,19 @@ html.noscroll {
   .compare_product_slider__block {
     padding: 0;
   }
-  .compare_product_slider__one,
-  .compare_product_slider__two .comparison__sublist {
+  .compare_product_slider__one {
     padding: 0 0 0 15px;
   }
-  .compare_product_slider__two,
-  .compare_product_slider__one .comparison__sublist {
+  .compare_product_slider__two {
     padding: 0 15px 0 0;
+  }
+  .compare_product_slider__one .comparison__sublist,
+  .compare_product_slider__one .compare_product_slider__swiper {
+    padding: 0 10px 0 0;
+  }
+  .compare_product_slider__two .comparison__sublist,
+  .compare_product_slider__two .compare_product_slider__swiper {
+    padding: 0 0 0 10px;
   }
   .compare_product_slider__container {
     padding: 40px 0 0;
