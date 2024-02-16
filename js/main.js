@@ -115,135 +115,23 @@ if (document.querySelector(".catalog_product_slider")) {
 // end slider catalog
 
 // start slider compare
-// if (document.querySelector(".compare_product_slider__one")) {
-//   document.querySelectorAll(".compare_product_slider__one").forEach((n) => {
-//     const cpslider = new Swiper(n.querySelector(".compare_product_slider__swiper"), {
-//       loop: false,
-//       slidesPerView: 1,
-//       speed: 500,
-//       spaceBetween: 10,
-//       allowTouchMove: true,
-//       slideToClickedSlide: false,
-//       touchRatio: 0.2,
-//       navigation: {
-//         nextEl: n.querySelector(".compare_product_slider__one_next"),
-//         prevEl: n.querySelector(".compare_product_slider__one_prev"),
-//       },
-//       breakpoints: {
-//         993: {
-//           slidesPerView: 4,
-//         },
-//         992: {
-//           slidesPerView: 1,
-//           spaceBetween: 20,
-//         },
-//       },
-//     });
-//     if (document.querySelector(".comparison__list_one")) {
-//       document.querySelectorAll(".comparison__list_one").forEach((n) => {
-//         const cbswiper = new Swiper(n.querySelector(".comparison__item"), {
-//           loop: false,
-//           slidesPerView: 1,
-//           speed: 300,
-//           spaceBetween: 10,
-//           allowTouchMove: true,
-//           slideToClickedSlide: false,
-//           touchRatio: 0.5,
-//           navigation: {
-//             nextEl: n.querySelector(".comparison__block_one_next"),
-//             prevEl: n.querySelector(".comparison__block_one_prev"),
-//           },
-//           breakpoints: {
-//             993: {
-//               slidesPerView: 4,
-//             },
-//             992: {
-//               slidesPerView: 1,
-//               spaceBetween: 20,
-//             },
-//           },
-//         });
-//         cpslider.on('slideChangeTransitionStart', function() {
-//           cbswiper.slideTo(cpslider.activeIndex);
-//         });
-//         cbswiper.on('transitionStart', function(){
-//           cpslider.slideTo(cbswiper.activeIndex);
-//         });
-//       });
-//     }
-//   });
-// }
-// if (document.querySelector(".compare_product_slider__two")) {
-//   document.querySelectorAll(".compare_product_slider__two").forEach((n) => {
-//     const cpslider = new Swiper(n.querySelector(".compare_product_slider__swiper"), {
-//       loop: false,
-//       slidesPerView: 1,
-//       speed: 500,
-//       spaceBetween: 10,
-//       allowTouchMove: true,
-//       slideToClickedSlide: false,
-//       touchRatio: 0.2,
-//       navigation: {
-//         nextEl: n.querySelector(".compare_product_slider__two_next"),
-//         prevEl: n.querySelector(".compare_product_slider__two_prev"),
-//       },
-//       breakpoints: {
-//         993: {
-//           slidesPerView: 4,
-//         },
-//         992: {
-//           slidesPerView: 1,
-//           spaceBetween: 20,
-//         },
-//       },
-//     });
-//     if (document.querySelector(".comparison__list_two")) {
-//       document.querySelectorAll(".comparison__list_two").forEach((n) => {
-//         const cbswiper = new Swiper(n.querySelector(".comparison__item"), {
-//           loop: false,
-//           slidesPerView: 1,
-//           speed: 300,
-//           spaceBetween: 10,
-//           allowTouchMove: true,
-//           slideToClickedSlide: false,
-//           touchRatio: 0.5,
-//           navigation: {
-//             nextEl: n.querySelector(".comparison__block_two_next"),
-//             prevEl: n.querySelector(".comparison__block_two_prev"),
-//           },
-//           breakpoints: {
-//             993: {
-//               slidesPerView: 4,
-//             },
-//             992: {
-//               slidesPerView: 1,
-//               spaceBetween: 20,
-//             },
-//           },
-//         });
-//         cpslider.on('slideChangeTransitionStart', function() {
-//           cbswiper.slideTo(cpslider.activeIndex);
-//         });
-//         cbswiper.on('transitionStart', function(){
-//           cpslider.slideTo(cbswiper.activeIndex);
-//         });
-//       });
-//     }
-//   });
-// }
 if (document.querySelector(".compare_product_slider__flex")) {
   document.querySelectorAll(".compare_product_slider__flex").forEach((n) => {
     const cslslider = new Swiper(n.querySelector(".compare_product_slider__left"), {
       loop: false,
       slidesPerView: 1,
       speed: 500,
-      spaceBetween: 10,
+      spaceBetween: 20,
       allowTouchMove: true,
       slideToClickedSlide: false,
       touchRatio: 0.2,
       navigation: {
         nextEl: n.querySelector(".compare_product_slider__left_next"),
         prevEl: n.querySelector(".compare_product_slider__left_prev"),
+      },
+      pagination: {
+        el: n.querySelector(".compare_product_slider__left_pagination"),
+        type: "fraction",
       },
       breakpoints: {
         993: {
@@ -265,10 +153,6 @@ if (document.querySelector(".compare_product_slider__flex")) {
           allowTouchMove: true,
           slideToClickedSlide: false,
           touchRatio: 0.5,
-          navigation: {
-            nextEl: n.querySelector(".comparison__list_left_next"),
-            prevEl: n.querySelector(".comparison__list_left_prev"),
-          },
           breakpoints: {
             993: {
               slidesPerView: 4,
@@ -295,13 +179,17 @@ if (document.querySelector(".compare_product_slider__flex")) {
       loop: false,
       slidesPerView: 1,
       speed: 500,
-      spaceBetween: 10,
+      spaceBetween: 20,
       allowTouchMove: true,
       slideToClickedSlide: false,
       touchRatio: 0.2,
       navigation: {
         nextEl: n.querySelector(".compare_product_slider__right_next"),
         prevEl: n.querySelector(".compare_product_slider__right_prev"),
+      },
+      pagination: {
+        el: n.querySelector(".compare_product_slider__right_pagination"),
+        type: "fraction",
       },
       breakpoints: {
         993: {
@@ -323,10 +211,6 @@ if (document.querySelector(".compare_product_slider__flex")) {
           allowTouchMove: true,
           slideToClickedSlide: false,
           touchRatio: 0.5,
-          navigation: {
-            nextEl: n.querySelector("comparison__list_right_next"),
-            prevEl: n.querySelector("comparison__list_right_prev"),
-          },
           breakpoints: {
             993: {
               slidesPerView: 4,
@@ -967,66 +851,6 @@ if (pp) {
 // end products__popup
 
 // start comparison
-// const comparison = document.querySelector(".comparison__block");
-// if (comparison) {
-//   const comparisonblock = document.querySelectorAll('.comparison__block');
-//   [...comparisonblock].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.setAttribute('inc-step', index+1);}});
-
-//   // const comparisonlinkActive = document.querySelectorAll(".compare_product_slider .comparison__link");
-//   // const comparisonsublistActive = document.querySelectorAll(".compare_product_slider .comparison__sublist");
-//   // comparisonlinkActive.forEach((n) => n.classList.remove("active"));
-//   // comparisonsublistActive.forEach((n) => n.classList.remove("active"));
-//   // comparisonsublistActive.forEach((n) => n.style.maxHeight = null);
-
-//   const clone = document.getElementsByClassName("comparison__link_one");
-//   const cltwo = document.getElementsByClassName("comparison__link_two");
-//   const cloneblock = document.querySelector(".compare_product_slider__one .comparison__block");
-//   const cltwoblock = document.querySelector(".compare_product_slider__two .comparison__block");
-//   for (i = 0; i < clone.length; i++) {
-//     clone[i].onclick = function(e) {
-//       const newcltwo = cltwoblock.children[this.parentNode.parentNode.getAttribute('inc-step') - 1].children[0].children[0];
-//       const cloneNext = this.nextElementSibling;
-//       if (cloneNext && cloneNext.classList.contains("active")) {
-//         newcltwo.nextElementSibling.style.maxHeight = null;
-//         newcltwo.nextElementSibling.classList.remove("active");
-//         newcltwo.classList.remove("active");
-//         this.classList.remove("active");
-//         cloneNext.classList.remove("active");
-//         cloneNext.style.maxHeight = null;
-//       } else if (cloneNext) {
-//         newcltwo.nextElementSibling.style.maxHeight = newcltwo.nextElementSibling.scrollHeight + "px";
-//         newcltwo.nextElementSibling.classList.add("active");
-//         newcltwo.classList.add("active");
-//         cloneNext.style.maxHeight = cloneNext.scrollHeight + "px";
-//         cloneNext.classList.add("active");
-//         this.classList.add("active");
-//       }
-//     };
-//   }
-//   for (i = 0; i < cltwo.length; i++) {
-//     cltwo[i].onclick = function(e) {
-//       const newclone = cloneblock.children[this.parentNode.parentNode.getAttribute('inc-step') - 1].children[0].children[0];
-//       const cltwoNext = this.nextElementSibling;
-//       if (cltwoNext && cltwoNext.classList.contains("active")) {
-//         newclone.nextElementSibling.style.maxHeight = null;
-//         newclone.nextElementSibling.classList.remove("active");
-//         newclone.classList.remove("active");
-//         this.classList.remove("active");
-//         cltwoNext.classList.remove("active");
-//         cltwoNext.style.maxHeight = null;
-//       } else if (cltwoNext) {
-//         newclone.nextElementSibling.style.maxHeight = newclone.nextElementSibling.scrollHeight + "px";
-//         newclone.nextElementSibling.classList.add("active");
-//         newclone.classList.add("active");
-//         cltwoNext.style.maxHeight = cltwoNext.scrollHeight + "px";
-//         cltwoNext.classList.add("active");
-//         this.classList.add("active");
-//       }
-//     };
-//   }
-// }
-
-
 const comparison = document.querySelector(".comparison__block");
 if (comparison) {
   const cl = document.getElementsByClassName("comparison__link");
