@@ -98,14 +98,15 @@ if (document.querySelector(".catalog_product_slider")) {
       slideToClickedSlide: false,
       touchRatio: 0.2,
       navigation: {
-        nextEl: n.querySelector(".catalog_product_slider__next"),
-        prevEl: n.querySelector(".catalog_product_slider__prev"),
+        nextEl: n.querySelector(".compare_product_slider__next_all"),
+        prevEl: n.querySelector(".compare_product_slider__prev_all"),
       },
       breakpoints: {
         992: {
           slidesPerView: 4,
         },
-        581: {
+        1: {
+          slidesPerView: 'auto',
           spaceBetween: 20,
         },
       },
