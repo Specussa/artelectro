@@ -2362,7 +2362,8 @@ html.noscroll {
   display: none;
 }
 
-.compare_product_slider__left {
+.compare_product_slider__left,
+.comparison__sublist_left {
   width: 100%;
 }
 
