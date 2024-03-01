@@ -873,3 +873,17 @@ if (comparison) {
   }
 }
 // end comparison
+
+// start widget
+const widget = document.querySelector(".widget");
+if (widget) {
+  const widgetclose = document.querySelector(".widget__close");
+  widgetclose.addEventListener('click', function() {
+    if (widget.classList.contains("active")) {
+      widget.classList.remove("active");
+    } else {
+      widget.classList.add("active");
+    }
+  })
+}
+// end widget
