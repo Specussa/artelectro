@@ -38,6 +38,8 @@ html.noscroll {
 
 .home_category__link svg,
 .home_category__sublink svg,
+.home_category__button svg,
+.home_category__subbutton svg,
 .catalog_subsection__filter_button svg {
   width: 14px;
   height: 14px;
@@ -46,16 +48,21 @@ html.noscroll {
   transform: rotate(0deg);
   -webkit-transition: -webkit-transform 0.3s linear;
   transition: transform 0.3s linear;
+  cursor: pointer;
 }
 
 .home_category__link,
 .home_category__sublink,
+.home_category__button,
+.home_category__subbutton,
 .home_category__subsublink {
   gap: 10px;
 }
 
 .home_category__link.active svg,
 .home_category__sublink.active svg,
+.home_category__button.active svg,
+.home_category__subbutton.active svg,
 .catalog_subsection__filter_button.active svg {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
@@ -107,13 +114,15 @@ html.noscroll {
 }
 
 .home_category__link,
-.home_category__sublink {
+.home_category__sublink,
+.home_category__button,
+.home_category__subbutton {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.home_category__sublink {
+.home_category__subbutton {
   padding: 0 0 0 15px;
   font-size: 14px;
   font-weight: 400;
@@ -2007,6 +2016,12 @@ html.noscroll {
   line-height: 28px;
 }
 
+.cart__price span {
+  display: none;
+  font-weight: 400;
+  color: #858585;
+}
+
 .cart__bottom {
   padding: 24px 30px;
   border-radius: 10px;
@@ -2373,7 +2388,7 @@ html.noscroll {
   position: fixed;
   right: 35px;
   bottom: 80px;
-  z-index: 120;
+  z-index: 30;
   visibility: visible;
   -webkit-animation: widgetVisible 1s ease-out forwards 1;
   animation: widgetVisible 1s ease-out forwards 1;
@@ -2516,7 +2531,9 @@ html.noscroll {
     width: 100%;
   }
   .home_category__link,
-  .home_category__sublink {
+  .home_category__sublink,
+  .home_category__button,
+  .home_category__subbutton {
     justify-content: space-between;
   }
   .btn__width {
@@ -3021,6 +3038,33 @@ html.noscroll {
     display: flex;
     padding: 0 0 30px;
     margin: 0 0 30px;
+  }
+  .catalog_product__button {
+    gap: 5px;
+  }
+  .cart__block.active {
+    width: 100%;
+    position: fixed;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    z-index: 31;
+    background-color: #fff;
+  }
+  .cart__block.active .cart__top {
+    padding: 15px 20px;
+    border-top: 1px solid #f0f0f8;
+    background-color: #fff;
+  }
+  .cart__block.active .cart__bottom,
+  .cart__block.active .cart__head {
+    display: none;
+  }
+  .cart__block.active .cart__desc {
+    padding: 0 0 5px;
+  }
+  .cart__block.active .cart__price span {
+    display: inline-block;
   }
 }
 

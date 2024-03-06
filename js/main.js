@@ -6,13 +6,13 @@ if(homecategorylist) {
   const headernl = document.getElementsByClassName("home_category__link");
   for (i = 0; i < headernl.length; i++) {
     headernl[i].onclick = function(e) {
-      if (!this.classList.contains("active")) {
-        const headernlNext = this.nextElementSibling;
+      if (!this.parentElement.classList.contains("active")) {
+        const headernlNext = this.parentElement.nextElementSibling;
         const headernsl = document.getElementsByClassName("home_category__sublist");
         const headernlActive = document.getElementsByClassName("home_category__link active");
   
         if (headernlNext && headernlNext.classList.contains("active")) {
-          this.classList.remove("active");
+          this.parentElement.classList.remove("active");
           headernlNext.classList.remove("active");
           headernlNext.style.maxHeight = null;
         } else if (headernlNext) {
@@ -28,21 +28,37 @@ if(homecategorylist) {
           e.preventDefault();
           headernlNext.style.maxHeight = headernlNext.scrollHeight + "px";
           headernlNext.classList.add("active");
-          this.classList.add("active");
+          this.parentElement.classList.add("active");
         }
+      }
+    };
+  }
+  const headernlarrow = document.getElementsByClassName("home_category__arrow");
+  for (i = 0; i < headernlarrow.length; i++) {
+    headernlarrow[i].onclick = function(e) {
+      const headernlarrowNext = this.parentElement.nextElementSibling;
+      e.preventDefault();
+      if (headernlarrowNext && headernlarrowNext.classList.contains("active")) {
+        this.parentElement.classList.remove("active");
+        headernlarrowNext.classList.remove("active");
+        headernlarrowNext.style.maxHeight = null;
+      } else if (headernlarrowNext) {
+        headernlarrowNext.style.maxHeight = headernlarrowNext.scrollHeight + "px";
+        headernlarrowNext.classList.add("active");
+        this.parentElement.classList.add("active");
       }
     };
   }
   const headernsl = document.getElementsByClassName("home_category__sublink");
   for (i = 0; i < headernsl.length; i++) {
     headernsl[i].onclick = function(e) {
-      if (!this.classList.contains("active")) {
-        const headernslNext = this.nextElementSibling;
+      if (!this.parentElement.classList.contains("active")) {
+        const headernslNext = this.parentElement.nextElementSibling;
         const headernssl = document.getElementsByClassName("home_category__subsublist");
         const headernslActive = document.getElementsByClassName("home_category__sublink active");
   
         if (headernslNext && headernslNext.classList.contains("active")) {
-          this.classList.remove("active");
+          this.parentElement.classList.remove("active");
           headernslNext.classList.remove("active");
           headernslNext.style.maxHeight = null;
         } else if (headernslNext) {
@@ -59,8 +75,25 @@ if(homecategorylist) {
           headernslNext.parentElement.parentElement.style.maxHeight = (headernslNext.parentElement.parentElement.scrollHeight + headernslNext.scrollHeight) + "px";
           headernslNext.style.maxHeight = headernslNext.scrollHeight + "px";
           headernslNext.classList.add("active");
-          this.classList.add("active");
+          this.parentElement.classList.add("active");
         }
+      }
+    };
+  }
+  const headernslarrow = document.getElementsByClassName("home_category__subarrow");
+  for (i = 0; i < headernslarrow.length; i++) {
+    headernslarrow[i].onclick = function(e) {
+      const headernslarrowNext = this.parentElement.nextElementSibling;
+      if (headernslarrowNext && headernslarrowNext.classList.contains("active")) {
+        this.parentElement.classList.remove("active");
+        headernslarrowNext.classList.remove("active");
+        headernslarrowNext.style.maxHeight = null;
+      } else if (headernslarrowNext) {
+        e.preventDefault();
+        headernslarrowNext.parentElement.parentElement.style.maxHeight = (headernslarrowNext.parentElement.parentElement.scrollHeight + headernslarrowNext.scrollHeight) + "px";
+        headernslarrowNext.style.maxHeight = headernslarrowNext.scrollHeight + "px";
+        headernslarrowNext.classList.add("active");
+        this.parentElement.classList.add("active");
       }
     };
   }
@@ -887,3 +920,19 @@ if (widget) {
   })
 }
 // end widget
+
+const cartblock = document.querySelector(".cart__block");
+if (cartblock) {
+  if (window.scrollY > 100) {
+    cartblock.classList.remove("active");
+  } else {
+    cartblock.classList.add("active");
+  }
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 100) {
+      cartblock.classList.remove("active");
+    } else {
+      cartblock.classList.add("active");
+    }
+  });
+}
