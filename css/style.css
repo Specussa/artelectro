@@ -2378,7 +2378,9 @@ html.noscroll {
 }
 
 .compare_product_slider__left,
-.comparison__sublist_left {
+.comparison__sublist_left,
+.compare_product_slider__right,
+.comparison__sublist_right {
   width: 100%;
 }
 
@@ -3072,9 +3074,11 @@ html.noscroll {
   .home_category .btn__incart {
     width: 125px;
   }
-  .catalog_subsection__list.active .catalog_subsection__item,
-  .catalog_subsection__item {
-    flex-direction: column;
+  .catalog_subsection__list_cart .catalog_subsection__image_block,
+  .catalog_subsection__list_cart .catalog_subsection__images,
+  .catalog_subsection__list_cart.active .catalog_subsection__image_block,
+  .catalog_subsection__list_cart.active .catalog_subsection__images {
+    margin: 0;
   }
   .catalog_subsection__flex_left {
     flex-direction: column;

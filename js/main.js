@@ -921,6 +921,7 @@ if (widget) {
 }
 // end widget
 
+// start cart__block
 const cartblock = document.querySelector(".cart__block");
 if (cartblock) {
   if (window.scrollY > 100) {
@@ -936,3 +937,4 @@ if (cartblock) {
     }
   });
 }
+// end cart__block
