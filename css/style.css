@@ -568,7 +568,7 @@ html.noscroll {
   pointer-events: none;
   border-radius: 10px;
   opacity: 0;
-  object-fit: contain;
+  object-fit: cover;
   -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
 }
@@ -1916,6 +1916,8 @@ html.noscroll {
 
 .catalog_product__info_file p {
   color: #0d0d0e;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .catalog_product__info_file p span {
@@ -1923,6 +1925,7 @@ html.noscroll {
 }
 
 .catalog_product__info_file svg {
+  flex: 0 0 auto;
   color: #63a48d;
 }
 
