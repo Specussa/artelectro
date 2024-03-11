@@ -295,7 +295,6 @@ $( document ).ready(function() {
 		var bl = $('.home_top').height(),
 		vid = $('video').height();
 		if(vid > bl){
-			console.log(vid - bl);
 			var t = (vid - bl)/2;
 			$('.video').css('top','-'+t+'px');
 		}else{

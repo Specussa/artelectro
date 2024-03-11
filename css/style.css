@@ -32,6 +32,10 @@ html.noscroll {
   flex: 0 0 auto;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .home_category__wrapper {
   gap: 20px;
 }
@@ -198,7 +202,9 @@ html.noscroll {
 .compare_product_slider__next.swiper-button-next,
 .compare_product_slider__prev.swiper-button-prev,
 .compare_product_slider__next_all.swiper-button-next,
-.compare_product_slider__prev_all.swiper-button-prev {
+.compare_product_slider__prev_all.swiper-button-prev,
+.catalog_product__slider_next.swiper-button-next,
+.catalog_product__slider_prev.swiper-button-prev {
   display: flex;
   width: 36px;
   height: 36px;
@@ -210,11 +216,13 @@ html.noscroll {
 }
 
 .home_category__next.swiper-button-next svg,
-.home_category__prev.swiper-button-prev svg.
+.home_category__prev.swiper-button-prev svg,
 .compare_product_slider__next.swiper-button-next svg,
 .compare_product_slider__prev.swiper-button-prev svg,
 .compare_product_slider__next_all.swiper-button-next svg,
-.compare_product_slider__prev_all.swiper-button-prev svg {
+.compare_product_slider__prev_all.swiper-button-prev svg,
+.catalog_product__slider_next.swiper-button-next svg,
+.catalog_product__slider_prev.swiper-button-prev svg {
   width: 18px;
   height: 18px;
   object-fit: contain;
@@ -222,17 +230,20 @@ html.noscroll {
 
 .home_category__prev svg,
 .compare_product_slider__prev svg,
-.compare_product_slider__prev_all svg {
+.compare_product_slider__prev_all svg,
+.catalog_product__slider_prev svg {
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
 
-.home_category__buttons .swiper-button-next:after,
-.home_category__buttons .swiper-button-prev:after,
-.catalog_subsection__navigation .swiper-button-next:after,
-.catalog_subsection__navigation .swiper-button-prev:after,
-.catalog_subsection__navigation_all.swiper-button-next:after,
-.catalog_subsection__navigation_all.swiper-button-prev:after {
+.home_category__buttons .swiper-button-next::after,
+.home_category__buttons .swiper-button-prev::after,
+.catalog_subsection__navigation .swiper-button-next::after,
+.catalog_subsection__navigation .swiper-button-prev::after,
+.catalog_subsection__navigation_all.swiper-button-next::after,
+.catalog_subsection__navigation_all.swiper-button-prev::after,
+.catalog_product__slider_next.swiper-button-next::after,
+.catalog_product__slider_prev.swiper-button-prev::after {
   display: none;
 }
 
@@ -1337,6 +1348,8 @@ html.noscroll {
   width: calc(50% - 10px);
   height: 510px;
   gap: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 .catalog_product__thumbs_block,
@@ -1354,9 +1367,40 @@ html.noscroll {
 }
 
 .catalog_product__slider.swiper {
-  width: calc(100% - 105px);
+  width: calc(100% - 125px);
   margin: 20px 0;
   box-shadow: 4px 4px 10px 0px #EBEBEB26,-4px -4px 10px 0px #E5E5E526;
+}
+
+.catalog_product__slider_prev.swiper-button-prev {
+  top: 20px;
+  bottom: auto;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.catalog_product__slider_next.swiper-button-next {
+  top: auto;
+  bottom: 0;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.catalog_product__slider_navigation .swiper-button-prev,
+.catalog_product__slider_navigation .swiper-rtl .swiper-button-next {
+  right: auto;
+  left: 43.5px;
+}
+
+.catalog_product__slider_navigation .swiper-button-next,
+.catalog_product__slider_navigation .swiper-rtl .swiper-button-prev {
+  right: auto;
+  left: 43.5px;
+}
+
+.catalog_product__slider_next.swiper-button-next.swiper-button-disabled,
+.catalog_product__slider_prev.swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
 }
 
 .catalog_product__right {
@@ -1369,10 +1413,6 @@ html.noscroll {
   font-weight: 800;
   line-height: 22px;
   text-transform: uppercase;
-}
-
-.catalog_product__slider_navigation {
-  display: none;
 }
 
 .catalog_product__thumbs_item.swiper-slide {
@@ -2354,12 +2394,10 @@ html.noscroll {
   transition: background-color 0.15s linear;
 }
 
-.comparison__button:hover .comparison__text,
 .comparison__input:checked ~ .comparison__text {
   color: #fff;
 }
 
-.comparison__button:hover .comparison__back,
 .comparison__input:checked ~ .comparison__back {
   background-color: #63a48d;
 }
@@ -2885,6 +2923,9 @@ html.noscroll {
     display: flex;
   }
   .catalog_subsection__navigation_all {
+    display: none;
+  }
+  .catalog_product__slider_navigation {
     display: none;
   }
 }

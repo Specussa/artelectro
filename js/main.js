@@ -277,9 +277,20 @@ if(productsliders){
     spaceBetween: 10,
     direction: "vertical",
   });
+
+  var videocount = {val: 0};
+  var videocounts = function(e) {
+    if (document.querySelector("video")) {
+      e.val = 1;
+    } else {
+      e.val = 0;
+    }
+  };
+
+  videocounts(videocount);
   var productslider = new Swiper(".catalog_product__slider", {
     loop: false,
-    initialSlide: 1,
+    initialSlide: videocount.val,
     slidesPerView: 1,
     spaceBetween: 20,
     zoom: true,
@@ -306,8 +317,10 @@ if(productsliders){
       transitionEnd: function(){
         var activeIndex = this.activeIndex;
         var activeSlide = document.getElementsByClassName('catalog_product__slider_item')[activeIndex];
-        var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
-        if (activeSlideVideo) {activeSlideVideo.play();}
+        if (document.querySelector("video")) {
+          var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+          if (activeSlideVideo) {activeSlideVideo.play();}
+        }
       },
     },
     thumbs: {
