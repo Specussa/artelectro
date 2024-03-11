@@ -2557,7 +2557,7 @@ html.noscroll {
 }
 
 @-webkit-keyframes widgetBack{from{-webkit-transform:rotate(90deg);transform:rotate(90deg);}to{-webkit-transform:rotate(0);transform:rotate(0);}}
-@keyframes widgetBack{from{-webkit-transform:rotate(90deg);transform:rotate(90deg);}to{-webkit-transform:rotate(0);.widget-button-inner-item:rotate(0);}}
+@keyframes widgetBack{from{-webkit-transform:rotate(90deg);transform:rotate(90deg);}to{-webkit-transform:rotate(0);widget-button-inner-item:rotate(0);}}
 @-webkit-keyframes widgetVisible{from{-webkit-transform:scale(0);transform:scale(0);}30.001%{-webkit-transform:scale(1.2);transform:scale(1.2);}62.999%{-webkit-transform:scale(1);transform:scale(1);}100%{-webkit-transform:scale(1);transform:scale(1);}}
 @keyframes widgetVisible{from{-webkit-transform:scale(0);transform:scale(0);}30.001%{-webkit-transform:scale(1.2);transform:scale(1.2);}62.999%{-webkit-transform:scale(1);transform:scale(1);}100%{-webkit-transform:scale(1);transform:scale(1);}}
 @-webkit-keyframes widgetPulse{50%{-webkit-transform:scale(1,1);transform:scale(1,1);opacity:1;}100%{-webkit-transform:scale(2,2);transform:scale(2,2);opacity:0;}}
